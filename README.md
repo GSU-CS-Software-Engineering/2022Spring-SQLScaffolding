@@ -1,5 +1,5 @@
 # 2022Spring-SQLScaffolding
 
-Stephen Barnhart
+Stephen Barnhart \n
 Alexis Jones
 Ricardo Sanabria
