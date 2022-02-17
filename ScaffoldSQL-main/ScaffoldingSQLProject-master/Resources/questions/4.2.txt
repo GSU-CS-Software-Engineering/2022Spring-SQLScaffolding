@@ -1,0 +1,21 @@
+Write an SQL query to determine how many guild leaders are in the game. Hint: You'll need to use the Guilds table.
+False
+True
+True
+StartSecrets
+MDE=GvG0inp9Xubcs7PuZBBykQ==zEHY2nWSn096YNVlIhAAQA==E8HpdH78v4zErTheihSPA6sCQekWgp3JxSrIoFxjeyJRpW36M55oUdf+WMp1K3lr
+EndSecrets
+StartParsonsSecrets
+MDE=TThEjyOi0dCDZTf3CX/igQ==nswstRfj0n3llz2RlQHdcQ==g3GyCt09RsWJt07wfXRsxyXhm1/WNAwBJby0Oqg303SB8o/zMQjoSNO6xpmwnj8f
+EndParsonsSecrets
+L R 1
+L C 1
+V 0,0 == 6
+Parsons
+SELECT $$toggle::*::COUNT(*)::COUNT(leader)::COUNT(guildID)::guildID::leader$$
+FROM $$toggle::Items::Players::Guilds::GuildTreasury::TradeTransactions$$
+EndParsons
+StartDatabase
+fantasy.db
+EndDatabase
+1

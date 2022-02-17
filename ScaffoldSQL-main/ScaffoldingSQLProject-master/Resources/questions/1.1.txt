@@ -1,0 +1,13 @@
+Dummy Quesion
+True
+True
+True
+U2FsdGVkX1/1gw2nUhSPwqHJ6Iy/UCNxxYGbIDvCRio=
+U2FsdGVkX1+BCqpNZnDzagGu2NEH+vDxaSFadFkF+eQ=
+L C 1
+Parsons
+SELECT $$toggle::*::type::dummy$$
+FROM $$toggle::Items::Players::GUILDS$$
+ORDER BY $$toggle::type::whatever::junk$$
+GROUP BY $$toggle::type::*::Whatever$$
+desc
