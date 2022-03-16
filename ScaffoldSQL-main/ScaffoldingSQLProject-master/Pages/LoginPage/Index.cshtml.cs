@@ -13,22 +13,26 @@ namespace ScaffoldingSQLProject.Pages.LoginPage
 {
     public class LoginPage : PageModel
     {
+
+        public int UserID { get; set; }
         [Required]
+        [BindProperty]
         public string Username { get; set; }
 
         [Required]
-        [MinLength(12)]
+        [BindProperty, DataType(DataType.Password)]
         public string password { get; set; }
 
-        public string PasswordEncryption(string input, HashAlgorithm algorithm)
+        public IActionResult OnPost()
         {
-            Byte[] inputBytes = Encoding.UTF8.GetBytes(input);
 
-            Byte[] hashedBytes = algorithm.ComputeHash(inputBytes);
-
-            return BitConverter.ToString(hashedBytes);
         }
-     
+
+        public static string Hash(string value)
+        {
+            return Convert.ToBase64String(SHA256.Create().ComputeHash(Encoding.UTF8.GetBytes(value)));
+        }
+  
 
     }
 
