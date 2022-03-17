@@ -23,16 +23,16 @@ namespace ScaffoldingSQLProject.Pages.LoginPage
         [BindProperty, DataType(DataType.Password)]
         public string password { get; set; }
 
-        public IActionResult OnPost()
-        {
+      //  public IActionResult OnPost()
+       // {
 
-        }
+      //  }
 
-        public static string Hash(string value)
-        {
-            return Convert.ToBase64String(SHA256.Create().ComputeHash(Encoding.UTF8.GetBytes(value)));
-        }
-  
+      //  public static string Hash(string value)
+     //   {
+           // return Convert.ToBase64String(SHA256.Create().ComputeHash(Encoding.UTF8.GetBytes(value)));
+     //   }
+  //
 
     }
 
