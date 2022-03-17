@@ -48,6 +48,10 @@ namespace ScaffoldingSQLProject.Pages.LoginPage
 
         }
 
+        /// <summary>
+        /// make a text 
+        /// </summary>
+        /// <returns></returns>
         private List<LoginPage> GetUsers()
         {
             var usersList = new List<LoginPage>
