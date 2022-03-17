@@ -49,41 +49,10 @@ namespace ScaffoldingSQLProject.Pages.LoginPage
         }
 
         /// <summary>
-        /// make a text 
+        /// make a text file 
         /// </summary>
         /// <returns></returns>
-        private List<LoginPage> GetUsers()
-        {
-            var usersList = new List<LoginPage>
-            {
-                new LoginPage
-                {
-                    UserID = 1,
-                    Username = "Alexis",
-                    password = "Admin"
-
-                },
-                new LoginPage
-                {
-                    UserID = 2,
-                    Username = "Stephen",
-                    password = "Admin"
-                },
-                new LoginPage
-                {
-                    UserID = 3,
-                    Username = "Desmond",
-                    password = "Admin"
-                },
-                new LoginPage
-                {
-                    UserID = 4,
-                    Username = "Ricardo",
-                    password = "Admin"
-                }
-            };
-            return usersList;
-        }
-
+       
+    
     }
 }
