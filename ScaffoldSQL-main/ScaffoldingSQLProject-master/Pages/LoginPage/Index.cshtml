@@ -31,14 +31,18 @@
 
 @Html.AntiForgeryToken()
 <script>
+const { data } = require("jquery");
 const { result } = require("underscore");
 
     $.ajax({
         url: `/LoginPage`,
         type: 'get',
+        data: data,
         contentType: 'application/json',
         sucess: function (result) {
-            alert(result);
+            if (result.status == false) {
+                $("A")
+            }
         }
     });
 </script>

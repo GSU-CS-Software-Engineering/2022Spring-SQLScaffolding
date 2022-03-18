@@ -47,12 +47,16 @@ namespace ScaffoldingSQLProject.Pages.LoginPage
 
 
         }
-
+        
         /// <summary>
         /// make a text file 
         /// </summary>
         /// <returns></returns>
-       
+       public void readData()
+        {
+            StreamReader a = new StreamReader("Login.txt");
+
+        }
     
     }
 }
