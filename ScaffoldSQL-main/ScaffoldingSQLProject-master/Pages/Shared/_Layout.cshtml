@@ -72,6 +72,11 @@
                         <li class="nav-item">
                             <a id="navHome" class="nav-link text-dark" asp-area="" asp-page="/Index">Home</a>
                         </li>
+                        <li class="nav-item">
+                            <a id="naLogin" class="nav-link text-dark" asp-area="" asp-page="/LoginPage/Index">Login 
+                            
+                            </a>
+                        </li>
                         @{ #if ADMIN }
                         <li class="nav-item">
                             <a id="navQuestionMaker" class="nav-link text-dark" asp-area="" asp-page="/QuestionMaker/Index">Question Maker</a>
@@ -89,12 +94,14 @@
                         </li>
                         @{ #endif }
                     </ul>
+
                 </div>
             </div>
         </nav>
     </header>
     @{ #endif }
 
+   
     <div class="container">
         <main role="main" class="pb-3">
             @RenderBody()
