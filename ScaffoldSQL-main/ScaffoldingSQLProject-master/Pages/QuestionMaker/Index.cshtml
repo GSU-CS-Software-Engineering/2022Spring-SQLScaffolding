@@ -21,7 +21,7 @@
                     <input id="unitNumber" class="form-control" type="text" asp-for="UnitNumber" required />
                     <label asp-for="QuestionNumber">Question Number</label>
                     <input id="questionNumber" class="form-control" type="text" asp-for="QuestionNumber" required />
-                    <input id="edit" type="button" class="form-control hide" value="Edit Existing Question" onclick="loadExisting()"/>
+                    <input id="edit" type="button" class="form-control hide" value="Edit Existing Question" onclick="loadExisting()" />
                     <label asp-for="Database">Database</label>
                     <select id="databases" asp-for="Database" class="form-control" required>
                         @*Do not delete! This is populated on load!*@
@@ -90,7 +90,7 @@
                 <div class="form-group" style="width:100%;">
                     <label asp-for="Question"> Question</label>
                     @*<input class="form-control" type="text" asp-for="Question" />*@
-                    <textarea class="form-control" required asp-for="Question" style="resize:none;"></textarea>
+                    <textarea class="form-control" required asp-for="Question" style="resize:none;" id="questionText"></textarea>
                     <script>
                         let txtArea = document.getElementById("Question");
                         const rows = txtArea.rows;
@@ -150,8 +150,41 @@
                 <input type="text" id="notHashedYetPP" asp-for="ParsonsSecretWord" />
             </div>
             <div class="form-group">
+                <button class="btn btn-primary" data-toggle="modal" data-target="#modal1">Preview</button>
+            </div>
+            <div class="form-group">
                 <button class="btn btn-primary">Submit</button>
             </div>
+            <div class="modal" id="modal1">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title">Modal title</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <p>Modal body text goes here.</p>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-primary">Submit</button>
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <script type="text/javascript">
+                $('#questionText').on('input', function () {
+                    var question = $("#questionText").val();
+                    $(".modal-title").html('<p>' + question + '<p>');
+                });
+                $('#notHashedYetPP').on('input', function () {
+                    var secret = $("#notHashedYetPP").val();
+                    $(".modal-body").html('<p>' + 'The secret word is: ' + secret + '<p>');
+                });
+            </script>
         </form>
     </div>
 </div>
