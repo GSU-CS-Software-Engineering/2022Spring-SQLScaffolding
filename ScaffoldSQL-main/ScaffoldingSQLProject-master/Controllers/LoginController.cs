@@ -4,16 +4,26 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using MongoDB.Driver;
 
 namespace ScaffoldingSQLProject.Controllers
 {
     public class LoginController : Controller
     {
-        public IActionResult Index()
+        
+        const string Connection = "mongodb+srv://<username>:<password>@sqlscaffolding.cyoep.mongodb.net/test";
+        
+        public LoginController()
         {
+
+        }
+         public ActionResult Index()
+        {
+     
             return View();
         }
     }
-   //[HttpPost]
+    //[HttpPost]
+   
    
 }

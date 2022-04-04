@@ -9,20 +9,26 @@ using System.Security.Cryptography;
 using System.Text;
 using Microsoft.AspNetCore.Http;
 using System.ComponentModel.DataAnnotations;
+using MongoDB.Bson;
+using MongoDB.Driver;
+using MongoDB.Bson.Serialization.Attributes;
 
 namespace ScaffoldingSQLProject.Pages.LoginPage
 {
     public class LoginPage : PageModel
     {
-
-        public int UserID { get; set; }
+        [BsonId]
+        [BsonRepresentation(BsonType.ObjectId)]
+        public ObjectId UserID { get; set; }
 
         [Required]
         [BindProperty]
-        public string Username { get; set; }
+        [BsonElement("userName")]
+        public string Username { get; set; } = null;
 
         [Required]
         [BindProperty, DataType(DataType.Password)]
+        [BsonElement("password")]
         public string password { get; set; }
 
         //  public IActionResult OnPost()
@@ -48,15 +54,6 @@ namespace ScaffoldingSQLProject.Pages.LoginPage
 
         }
         
-        /// <summary>
-        /// make a text file 
-        /// </summary>
-        /// <returns></returns>
-       public void readData()
-        {
-            StreamReader a = new StreamReader("Login.txt");
-
-        }
-    
+       
     }
 }
