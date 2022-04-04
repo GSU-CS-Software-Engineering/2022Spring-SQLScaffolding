@@ -90,7 +90,7 @@
                 <div class="form-group" style="width:100%;">
                     <label asp-for="Question"> Question</label>
                     @*<input class="form-control" type="text" asp-for="Question" />*@
-                    <textarea class="form-control" required asp-for="Question" style="resize:none;"></textarea>
+                    <textarea class="form-control" required asp-for="Question" style="resize:none;" id="questionText"></textarea>
                     <script>
                         let txtArea = document.getElementById("Question");
                         const rows = txtArea.rows;
@@ -144,12 +144,13 @@
                 @* Do not remove! *@
                 <input id="btnAddParsonsHint" type="button" value="Add Parsons Problem Hint" data-RowNumber="0" />
             </div>
-            <div class="form-group">
-                <button class="btn btn-primary" data-toggle="modal" data-target="#modal1">Preview</button>
-            </div>
+
             <div class="form-group">
                 <label asp-for="ParsonsSecretWord">Secret Word for parson's</label>
                 <input type="text" id="notHashedYetPP" asp-for="ParsonsSecretWord" />
+            </div>
+            <div class="form-group">
+                <button class="btn btn-primary" data-toggle="modal" data-target="#modal1">Preview</button>
             </div>
             <div class="form-group">
                 <button class="btn btn-primary">Submit</button>
@@ -173,6 +174,17 @@
                     </div>
                 </div>
             </div>
+
+            <script type="text/javascript">
+                $('#questionText').on('input', function () {
+                    var question = $("#questionText").val();
+                    $(".modal-title").html('<p>' + question + '<p>');
+                });
+                $('#notHashedYetPP').on('input', function () {
+                    var secret = $("#notHashedYetPP").val();
+                    $(".modal-body").html('<p>' + 'The secret word is: ' + secret + '<p>');
+                });
+            </script>
         </form>
     </div>
 </div>
