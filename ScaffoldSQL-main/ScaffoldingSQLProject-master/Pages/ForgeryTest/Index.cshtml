@@ -5,6 +5,21 @@
 @Html.AntiForgeryToken()
 <script>
     function GetWord(filename) {
+        const noun = ["chicken", "gourd", "book", "basketball"];
+        const verb = ["slaps", "crashes", "runs", "skips"];
+        const adj = ["shy", "blue", "loud", "happy"];
+        var num1;
+        var num2;
+        var num3;
+
+        num1 = getRandomInt(4);
+        num2 = getRandomInt(4);
+        num3 = getRandomInt(4);
+
+
+        console.log(noun[num1]);
+        console.log(verb[num2]);
+        console.log(adj[num3]);
         $.ajax(
             {
                 url: "/FileController/SecretWord",
