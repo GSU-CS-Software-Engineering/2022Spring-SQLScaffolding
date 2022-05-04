@@ -10,16 +10,18 @@ namespace ScaffoldingSQLProject.Controllers
 {
     public class LoginController : Controller
     {
+        private IMongoCollection<LoginPage> collection;
         
-        const string Connection = "mongodb+srv://<username>:<password>@sqlscaffolding.cyoep.mongodb.net/test";
         
         public LoginController()
         {
-
+            var client =new MongoClient("mongodb+srv://<username>:<password>@sqlscaffolding.cyoep.mongodb.net/test");
+            IMongoDatabase db = client.GetDatabase("SQLScaffolding");
+            this.collection = db.GetCollection<LoginPage>("Login");
         }
          public ActionResult Index()
         {
-     
+            var model = collection.Find(FilterDefinition<LoginPage>.Empty).ToList();
             return View();
         }
     }

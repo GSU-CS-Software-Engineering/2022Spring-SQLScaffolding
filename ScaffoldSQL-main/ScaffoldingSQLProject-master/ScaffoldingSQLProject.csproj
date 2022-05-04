@@ -539,6 +539,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Content Remove="Pages\LoginPage\signup.cshtml" />
     <Content Remove="wwwroot\lib\codemirror-5.64.0\.editorconfig" />
     <Content Remove="wwwroot\lib\codemirror-5.64.0\.gitattributes" />
     <Content Remove="wwwroot\lib\codemirror-5.64.0\.npmignore" />
@@ -555,6 +556,10 @@
   <ItemGroup>
     <Folder Include="wwwroot\lib\sqljs\" />
     <Folder Include="wwwroot\lib\parsonsjs\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="Pages\LoginPage\signup.cshtml" />
   </ItemGroup>
 
   <ItemGroup>
