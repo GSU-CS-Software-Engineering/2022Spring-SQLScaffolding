@@ -1,0 +1,49 @@
+@page
+@model ScaffoldingSQLProject.Pages.LoginPage.LoginPage
+@{ViewData["Title"] = "Login Page";}
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="utf-8">
+    <title>Admin Login Form</title>
+    <link rel="stylesheet" href="loginStyle.css"></link>
+</head>
+<body>
+    <div class="center">
+        <h1>SQL Scaffolding Admin Login</h1>
+        <form id="form_id" method="post">
+            <div class="txt_field">
+                <label >Username</label>
+                <input id="Username" name="username"  required>
+            </div>
+            <div class="txt_field">
+                <label >Password</label>
+                <input  id=" Password" required>
+
+            </div>
+            <input type="submit" value="Login" id="Submit">
+            <div class="signup_link">
+                <a href="signup.html">Create an Account</a>
+            </div>
+        </form>
+    </div>
+</body>
+</html>
+
+@Html.AntiForgeryToken()
+<script>
+const { data } = require("jquery");
+const { result } = require("underscore");
+
+    $.ajax({
+        url: `/LoginPage`,
+        type: 'get',
+        data: data,
+        contentType: 'application/json',
+        sucess: function (result) {
+            if (result.status == false) {
+                $("A")
+            }
+        }
+    });
+</script>

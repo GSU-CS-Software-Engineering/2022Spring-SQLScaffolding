@@ -20,7 +20,7 @@ function activeLinkControl() {
         console.log(`Could not find the page identifier ${id} in the navigation bar. Is this a page for internal testing? If you are a student or other
 end user, please report this issue.`);
     }
-
+   
     // Hide the navbar
     if (window !== window.top) {
         document.getElementById('primary_navbar').classList.add('hide');
