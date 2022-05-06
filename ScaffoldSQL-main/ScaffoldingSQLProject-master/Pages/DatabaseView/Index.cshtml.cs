@@ -30,7 +30,7 @@ namespace ScaffoldingSQLProject.Pages.Database_Page.IndexModel
             {
                 Controllers.FileController.WriteDatabase(DatabaseFile);
             }else {
-                Console.WriteLine("Not Of type .db .sqli");
+                Console.WriteLine("Not of type .json");
             }
         }
 
@@ -39,7 +39,7 @@ namespace ScaffoldingSQLProject.Pages.Database_Page.IndexModel
             if(file != null)
             {
                 var extension = "." + file.FileName.Split('.')[file.FileName.Split('.').Length - 1];
-                return (extension == ".db" || extension == ".sqli");
+                return (extension == ".json");
             }
             else
             {
